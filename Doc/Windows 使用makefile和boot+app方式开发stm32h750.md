@@ -224,13 +224,13 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		typedef  void (*pFunction)(void);
   		pFunction JumpToApplication; //void (*JumpToApplication)(void);
   		~~~
-
-  	这里的typedef大家可能看不懂，typedef 其实和 define差不多，但是typedef比define更灵活一些。我来举个例子。
-
-  	>一般我们定义函数指针可以这么定义` void (*myfunc)(void) = xxx;`， 这样我们就直接定义了一个无返回值无参数的函数指针叫做'myfunc'，它可以指向任何无返回值无参数的函数。但是这里的typedef是给了void (*xxx)(void)一个别名，typedef后，pFunction也就是“无返回值无参数函数指针类型”的别名，于是第二句就是声明了一个名为`JumpToApplication`的指向无返回值无参数类型函数的函数指针。
-  	>
-  	>语句` myfunc();`就可以直接调用这个指针指向的函数，但实际上，执行这一句其实是跳转到这个指针的地址执行指令（函数名就是地址）。所以如果我们在bootloader里给这个指针赋一个application里一个函数的地址，就可以实现从bootloader到application的跳转。
-
+  		
+  		这里的typedef大家可能看不懂，typedef 其实和 define差不多，但是typedef比define更灵活一些。我来举个例子。
+  		
+  		>一般我们定义函数指针可以这么定义` void (*myfunc)(void) = xxx;`， 这样我们就直接定义了一个无返回值无参数的函数指针叫做'myfunc'，它可以指向任何无返回值无参数的函数。但是这里的typedef是给了void (*xxx)(void)一个别名，typedef后，pFunction也就是“无返回值无参数函数指针类型”的别名，于是第二句就是声明了一个名为`JumpToApplication`的指向无返回值无参数类型函数的函数指针。
+  		>
+  		>语句` myfunc();`就可以直接调用这个指针指向的函数，但实际上，执行这一句其实是跳转到这个指针的地址执行指令（函数名就是地址）。所以如果我们在bootloader里给这个指针赋一个application里一个函数的地址，就可以实现从bootloader到application的跳转。
+  		
   	* 函数内跳转
 
   		~~~C++
@@ -238,10 +238,11 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		__set_MSP(*(__IO uint32_t*) APPLICATION_ADDRESS);
   		JumpToApplication(); //jump
   		~~~
-
-  	这里刚接触bootloader的可能看不懂。这里的APPLICATION_ADDRESS就是0x90000000，也就是app的起始地址。在后面的链接文件中，我们把app的中断向量表放在最前面，也就是起始地址0x90000000。熟悉cortex中断向量表的可能知道，表中第一个地址存放的是sp指针，就是堆栈指针；第二个（也就是0x90000004）才是Reset_Handler，是单片机上电后开始运行的第一个函数，它调用SystenInit函数配置时钟，调用C库的\__main(armcc compiler)或__mainCRTStartup(gcc compiler)来初始化sp指针和bss段或者直接在函数内设置sp指针的值，初始化bss段。
-
-  	总之，执行完最后一句后，程序就跳转到App执行。
+  		
+  		这里刚接触bootloader的可能看不懂。这里的APPLICATION_ADDRESS就是0x90000000，也就是app的起始地址。在后面的链接文件中，我们把app的中断向量表放在最前面，也就是起始地址0x90000000。熟悉cortex中断向量表的可能知道，表中第一个地址存放的是sp指针，就是堆栈指针；第二个（也就是0x90000004）才是Reset_Handler，是单片机上电后开始运行的第一个函数，它调用SystenInit函数配置时钟，调用C库的\__main(armcc compiler)或__mainCRTStartup(gcc compiler)来初始化sp指针和bss段或者直接在函数内设置sp指针的值，初始化bss段。
+  		
+  		总之，执行完最后一句后，程序就跳转到App执行。
+  	
 
 * application
 

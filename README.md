@@ -324,11 +324,11 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 	
 		打开链接脚本文件STM32H750VBTx_FLASH.ld，如果你是keil开发，请移步其他教程（大概是在Target选项卡里修改存储的配置）。把原来FLASH的起始地址008000000改为0x90000000，LENGTH改为8192k。
 	
-		![修改](Doc\链接脚本文件修改.png)
+		<img src="Doc\链接脚本文件修改.png" alt="修改" style="zoom:100%;" />
 	
 	5. 点灯
 	
-		![点灯](Doc\点灯.png)
+		<img src="Doc\点灯.png" alt="点灯" style="zoom:100%;" />
 	
 
 ### 三、程序烧录
@@ -337,7 +337,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	打开Openocd安装路径下的\scripts\target文件夹，找到stm32h7x.cfg，复制为stm32h7x_extern.cfg，打开并添加` set QUADSPI 1`。
 
-	![Openocd](Doc\Openocd配置.png)
+	<img src="Doc\Openocd配置.png" alt="Openocd" style="zoom:100%;" />
 
 * 编辑makefile
 
@@ -375,7 +375,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	* QSPI时钟源选择。应该选择HCLK为时钟源，因为跳转到App后复位，时钟源会重置为默认的HCLK。
 
-		![](Doc\QSPI默认时钟配置.png)
+		<img src="Doc\QSPI默认时钟配置.png" style="zoom:100%;" />
 
 2. 内存区域配置
 
@@ -387,17 +387,17 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	* 在你烧录完bootloader后，确保Openocd能读出w25qxx芯片的信息（具体参考这位大佬的视频[[Linux开发STM32h750\]使用OpenOCD下载程序到外部flash_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1uS4y1C7bn?spm_id_from=333.880.my_history.page.click&vd_source=d01618f4fdc9bb0fa04158228c78a2ac)），并且在`JumpToApplication();`之前，JumpToApplication是app中Reset_Handler的地址，APPLICATION_ADDRESS指向的是app中堆栈指针的值。
 
-		![](Doc\bootloader1.png)
+		<img src="Doc\bootloader1.png" style="zoom:100%;" />
 
 		图中0x9000339d是app中Reset_Handler的地址；0x2407ffff是我设置的堆栈指针(_estack)的值。
 
 		Reset_Handler
 
-		![](Doc\Reset_Handler.png)
+		<img src="Doc\Reset_Handler.png" style="zoom:100%;" />
 
 		_estack:
 
-		![](Doc\_estack.png)
+		<img src="Doc\_estack.png" style="zoom:100%;" />
 
 		
 

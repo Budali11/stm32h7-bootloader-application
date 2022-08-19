@@ -300,7 +300,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 	
 		> virtual address (VMA)：VMA是指程序运行时所用的地址，也是大多数情况下我们使用的地址。我们平时用STM32时，程序都以0x08000000为起始地址，这个0x08000000既是VMA也是LMA，因为在官方的system_stm32h7xx.c文件中，定义了向量表的起始地址是0x08000000；在链接文件中，FLASH的起始地址也是0x08000000。一个是在程序中使用的，是程序运行过程中使用的；另一个是在程序外部，程序并不关心。
 		>
-		> <img src="F:\Cubemx\PRJ\make_bootloader\Doc\VMA.png" alt="VMA" style="zoom:80%;" />
+		> <img src="./VMA.png" alt="VMA" style="zoom:80%;" />
 		>
 		> 这里的FLASH_BANK1_BASE也就是0x08000000。
 		>
@@ -308,13 +308,13 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 		>
 		> bootloader烧录地址：
 		>
-		> <img src="F:\Cubemx\PRJ\make_bootloader\Doc\烧录地址.png" style="zoom: 67%;" />
+		> <img src="./烧录地址.png" style="zoom: 67%;" />
 		>
 		> 可以看到由于程序需要烧录在0x08000000，所以openocd擦除了0x08000000到0x08005de0的位置。（0x5de0是这个程序的大小）。
 		>
 		> application烧录地址：
 		>
-		> <img src="F:\Cubemx\PRJ\make_bootloader\Doc\烧录地址2.png" style="zoom:67%;" />
+		> <img src="./烧录地址2.png" style="zoom:67%;" />
 	
 		通常.text（代码）和.rodata段都放在FLASH（也就是ROM）里。
 	
@@ -324,11 +324,11 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 	
 		打开链接脚本文件STM32H750VBTx_FLASH.ld，如果你是keil开发，请移步其他教程（大概是在Target选项卡里修改存储的配置）。把原来FLASH的起始地址008000000改为0x90000000，LENGTH改为8192k。
 	
-		![修改](F:\Cubemx\PRJ\make_bootloader\Doc\链接脚本文件修改.png)
+		![修改](./链接脚本文件修改.png)
 	
 	5. 点灯
 	
-		![点灯](F:\Cubemx\PRJ\make_bootloader\Doc\点灯.png)
+		![点灯](./点灯.png)
 	
 
 ### 三、程序烧录
@@ -337,7 +337,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	打开Openocd安装路径下的\scripts\target文件夹，找到stm32h7x.cfg，复制为stm32h7x_extern.cfg，打开并添加` set QUADSPI 1`。
 
-	![Openocd](F:\Cubemx\PRJ\make_bootloader\Doc\Openocd配置.png)
+	![Openocd](./Openocd配置.png)
 
 * 编辑makefile
 
@@ -375,7 +375,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	* QSPI时钟源选择。应该选择HCLK为时钟源，因为跳转到App后复位，时钟源会重置为默认的HCLK。
 
-		![](F:\Cubemx\PRJ\make_bootloader\Doc\QSPI默认时钟配置.png)
+		![](./QSPI默认时钟配置.png)
 
 2. 内存区域配置
 
@@ -393,11 +393,11 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 		Reset_Handler
 
-		![](F:\Cubemx\PRJ\make_bootloader\Doc\Reset_Handler.png)
+		![](./Reset_Handler.png)
 
 		_estack:
 
-		![](F:\Cubemx\PRJ\make_bootloader\Doc\_estack.png)
+		![](./_estack.png)
 
 		
 
@@ -411,9 +411,8 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 ### Reference
 
-[an5188](F:\Git\DOWNLOAD\an5188-external-memory-code-execution-on-stm32f7x0-value-line-stm32h750-value-line-stm32h7b0-value-line-and-stm32h730-value-line-mcus-stmicroelectronics.pdf)
+an4852-programming-an-external-flash-memory-using-the-uart-bootloader-builtin-stm32-microcontrollers-stmicroelectronics
 
-[W25Q64JV_Reference](I:\Users\HaoNan\Desktop\应用手册\components\W25Q64JV RevK 03102021 Plus.pdf)
+W25Q64JV_Reference_Manual
 
 安富莱STM32-V7开发板用户手册
-

@@ -1,0 +1,5 @@
+make.exe --dry-run --keep-going --print-directory
+make: Entering directory '/cygdrive/f/Cubemx/PRJ/make_application'
+make: Nothing to be done for 'all'.
+make: Leaving directory '/cygdrive/f/Cubemx/PRJ/make_application'
+ 

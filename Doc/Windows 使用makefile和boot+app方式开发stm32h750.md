@@ -411,8 +411,8 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 ### Reference
 
-[an5188](F:\Git\DOWNLOAD\an5188-external-memory-code-execution-on-stm32f7x0-value-line-stm32h750-value-line-stm32h7b0-value-line-and-stm32h730-value-line-mcus-stmicroelectronics.pdf)
+an4852-programming-an-external-flash-memory-using-the-uart-bootloader-builtin-stm32-microcontrollers-stmicroelectronics
 
-[W25Q64JV_Reference](I:\Users\HaoNan\Desktop\应用手册\components\W25Q64JV RevK 03102021 Plus.pdf)
+W25Q64JV_Reference_Manual
 
 安富莱STM32-V7开发板用户手册

@@ -408,3 +408,12 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 ### 附件
 
 [Budali11/stm32h7-bootloader-application: 在stm32h750上使用bootloader+Application开发 (github.com)](https://github.com/Budali11/stm32h7-bootloader-application)
+
+### Reference
+
+[an5188](F:\Git\DOWNLOAD\an5188-external-memory-code-execution-on-stm32f7x0-value-line-stm32h750-value-line-stm32h7b0-value-line-and-stm32h730-value-line-mcus-stmicroelectronics.pdf)
+
+[W25Q64JV_Reference](I:\Users\HaoNan\Desktop\应用手册\components\W25Q64JV RevK 03102021 Plus.pdf)
+
+安富莱STM32-V7开发板用户手册
+

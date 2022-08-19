@@ -1,0 +1,42 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        },
+        {
+            "name": "arm-gcc",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "Core/Inc",
+                "Drivers/CMSIS/Device/ST/STM32H7xx/Include",
+                "Drivers/STM32H7xx_HAL_Driver/Inc/**",
+                "User/Inc"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "USE_HAL_DRIVER ",
+                "STM32H750xx"
+            ],
+            "compilerPath": "I:\\MCU\\GNU_tools_ARM\\bin\\arm-none-eabi-gcc.exe",
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-arm",
+            "compilerArgs": []
+        }
+    ],
+    "version": 4
+}

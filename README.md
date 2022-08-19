@@ -300,7 +300,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 	
 		> virtual address (VMA)：VMA是指程序运行时所用的地址，也是大多数情况下我们使用的地址。我们平时用STM32时，程序都以0x08000000为起始地址，这个0x08000000既是VMA也是LMA，因为在官方的system_stm32h7xx.c文件中，定义了向量表的起始地址是0x08000000；在链接文件中，FLASH的起始地址也是0x08000000。一个是在程序中使用的，是程序运行过程中使用的；另一个是在程序外部，程序并不关心。
 		>
-		> <img src="F:\Cubemx\PRJ\make_bootloader\Doc\VMA.png" alt="VMA" style="zoom:80%;" />
+		> <img src="Doc\VMA.png" alt="VMA" style="zoom:80%;" />
 		>
 		> 这里的FLASH_BANK1_BASE也就是0x08000000。
 		>
@@ -308,13 +308,13 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 		>
 		> bootloader烧录地址：
 		>
-		> <img src="F:\Cubemx\PRJ\make_bootloader\Doc\烧录地址.png" style="zoom: 67%;" />
+		> <img src="Doc\烧录地址.png" style="zoom: 67%;" />
 		>
 		> 可以看到由于程序需要烧录在0x08000000，所以openocd擦除了0x08000000到0x08005de0的位置。（0x5de0是这个程序的大小）。
 		>
 		> application烧录地址：
 		>
-		> <img src="F:\Cubemx\PRJ\make_bootloader\Doc\烧录地址2.png" style="zoom:67%;" />
+		> <img src="Doc\烧录地址2.png" style="zoom:67%;" />
 	
 		通常.text（代码）和.rodata段都放在FLASH（也就是ROM）里。
 	
@@ -324,11 +324,11 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 	
 		打开链接脚本文件STM32H750VBTx_FLASH.ld，如果你是keil开发，请移步其他教程（大概是在Target选项卡里修改存储的配置）。把原来FLASH的起始地址008000000改为0x90000000，LENGTH改为8192k。
 	
-		![修改](F:\Cubemx\PRJ\make_bootloader\Doc\链接脚本文件修改.png)
+		![修改](Doc\链接脚本文件修改.png)
 	
 	5. 点灯
 	
-		![点灯](F:\Cubemx\PRJ\make_bootloader\Doc\点灯.png)
+		![点灯](Doc\点灯.png)
 	
 
 ### 三、程序烧录
@@ -337,7 +337,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	打开Openocd安装路径下的\scripts\target文件夹，找到stm32h7x.cfg，复制为stm32h7x_extern.cfg，打开并添加` set QUADSPI 1`。
 
-	![Openocd](F:\Cubemx\PRJ\make_bootloader\Doc\Openocd配置.png)
+	![Openocd](Doc\Openocd配置.png)
 
 * 编辑makefile
 
@@ -361,7 +361,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	注意__connect__ 和__download__ 下的路径要改为自己的路径。
 
-	<img src="F:\Cubemx\PRJ\make_bootloader\Doc\makefile.png" alt="makefile" style="zoom: 80%;" />
+	<img src="Doc\makefile.png" alt="makefile" style="zoom: 80%;" />
 
 	两个工程都配置完成后，`make`编译，再`make download`烧录。__connect__和__gdb__用于gdb调试。烧录完两个程序后，可以看到板子执行了APP的闪灯程序。
 
@@ -375,7 +375,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	* QSPI时钟源选择。应该选择HCLK为时钟源，因为跳转到App后复位，时钟源会重置为默认的HCLK。
 
-		![](F:\Cubemx\PRJ\make_bootloader\Doc\QSPI默认时钟配置.png)
+		![](Doc\QSPI默认时钟配置.png)
 
 2. 内存区域配置
 
@@ -387,17 +387,17 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	* 在你烧录完bootloader后，确保Openocd能读出w25qxx芯片的信息（具体参考这位大佬的视频[[Linux开发STM32h750\]使用OpenOCD下载程序到外部flash_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1uS4y1C7bn?spm_id_from=333.880.my_history.page.click&vd_source=d01618f4fdc9bb0fa04158228c78a2ac)），并且在`JumpToApplication();`之前，JumpToApplication是app中Reset_Handler的地址，APPLICATION_ADDRESS指向的是app中堆栈指针的值。
 
-		![](F:\Cubemx\PRJ\make_bootloader\Doc\bootloader1.png)
+		![](Doc\bootloader1.png)
 
 		图中0x9000339d是app中Reset_Handler的地址；0x2407ffff是我设置的堆栈指针(_estack)的值。
 
 		Reset_Handler
 
-		![](F:\Cubemx\PRJ\make_bootloader\Doc\Reset_Handler.png)
+		![](Doc\Reset_Handler.png)
 
 		_estack:
 
-		![](F:\Cubemx\PRJ\make_bootloader\Doc\_estack.png)
+		![](Doc\_estack.png)
 
 		
 

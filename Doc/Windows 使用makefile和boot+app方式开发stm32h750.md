@@ -416,4 +416,3 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 [W25Q64JV_Reference](I:\Users\HaoNan\Desktop\应用手册\components\W25Q64JV RevK 03102021 Plus.pdf)
 
 安富莱STM32-V7开发板用户手册
-

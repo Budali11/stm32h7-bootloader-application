@@ -66,6 +66,11 @@ uint8_t debug[] = {"Yuki.\r\n"};
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+  for(uint8_t i = 0; i < 8; i++)
+	{
+		NVIC->ICER[i]=0xFFFFFFFF;
+		NVIC->ICPR[i]=0xFFFFFFFF;
+	}
   SCB->VTOR = QSPI_BASE;
   __enable_irq();
   __set_PRIMASK(0);

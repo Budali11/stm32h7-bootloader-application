@@ -2,15 +2,15 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # GNU Make 4.3
 # Built for x86_64-pc-cygwin
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
- 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Fri Aug 19 15:07:45 2022
+# Make data base, printed on Sat Sep  3 10:44:40 2022
 
 # Variables
+ 
 
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
@@ -23,15 +23,13 @@ LIBDIR =
 # environment
 LC_ALL = C
 # environment
-EIDE_BINARIES_VER = 8.3.0
-# environment
 USERPROFILE = C:\Users\HaoNan
 # environment
 VBOX_MSI_INSTALL_PATH = G:\VIRTUAL\
 # environment
 LOCALAPPDATA = C:\Users\HaoNan\AppData\Local
 # environment
-VSCODE_CWD = F:\Cubemx\PRJ\make_application
+VSCODE_CWD = F:\Git\PRJ\stm32h7-bootloader-application\make_application
 # environment
 SYSTEMROOT = C:\WINDOWS
 # makefile (from 'Makefile', line 147)
@@ -45,7 +43,6 @@ SZ = $(PREFIX)size
 # environment
 PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\PowerShell\Modules\
 # default
- 
 MAKE_COMMAND := make
 # environment
 CUDA_PATH_V10_0 = F:\Deep_learn\CUDA\NVIDIA GPU Computing Toolkit\CUDA\v10.0
@@ -54,7 +51,7 @@ CUDA_PATH_V10_0 = F:\Deep_learn\CUDA\NVIDIA GPU Computing Toolkit\CUDA\v10.0
 # makefile (from 'Makefile', line 109)
 C_DEFS = -DUSE_HAL_DRIVER -DSTM32H750xx
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16112_HZGHOZEUAONXFHLT
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15008_ZRYMIASFSQJLNYOE
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -86,9 +83,10 @@ TMP = /cygdrive/c/Users/HaoNan/AppData/Local/Temp
 # makefile
 MAKEFLAGS = pqrR
 # environment
-ONEDRIVE = C:\Users\十七岁浩南\OneDrive
+ONEDRIVE = C:\Users\HaoNan\OneDrive
 # makefile
-CURDIR := /cygdrive/f/Cubemx/PRJ/make_application
+ 
+CURDIR := /cygdrive/f/Git/PRJ/stm32h7-bootloader-application/make_application
 # makefile (from 'Makefile', line 86)
 HEX = $(CP) -O ihex
 # environment
@@ -114,7 +112,7 @@ ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffuncti
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 16112
+VSCODE_PID = 15008
 # environment
 CUDA_PATH = F:\Deep_learn\CUDA\NVIDIA GPU Computing Toolkit\CUDA\v11.1
 # automatic
@@ -126,18 +124,16 @@ CP = $(PREFIX)objcopy
 # automatic
 *F = $(notdir $*)
 # environment
-EIDE_TOOL_GCC_ARM = I:\MCU\GNU_tools_ARM\bin
-# environment
 SW_SIM_TEMP = C:\ProgramData\SOLIDWORKS\SW_net_sim_temp\
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
 VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"cc0490d1397af23dc5bf44a96fe15dbb.zh-cn","_translationsConfigFile":"C:\\Users\\HaoNan\\AppData\\Roaming\\Code\\clp\\cc0490d1397af23dc5bf44a96fe15dbb.zh-cn\\tcf.json","_cacheRoot":"C:\\Users\\HaoNan\\AppData\\Roaming\\Code\\clp\\cc0490d1397af23dc5bf44a96fe15dbb.zh-cn","_resolvedLanguagePackCoreLocation":"C:\\Users\\HaoNan\\AppData\\Roaming\\Code\\clp\\cc0490d1397af23dc5bf44a96fe15dbb.zh-cn\\e4503b30fc78200f846c62cf8091b76ff5547662","_corruptedFile":"C:\\Users\\HaoNan\\AppData\\Roaming\\Code\\clp\\cc0490d1397af23dc5bf44a96fe15dbb.zh-cn\\corrupted.info","_languagePackSupport":true}
- 
 # default
 MAKE_HOST := x86_64-pc-cygwin
 # environment
 PROGRAMDATA = C:\ProgramData
+ 
 # default
 SHELL := /bin/sh
 # environment
@@ -155,7 +151,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /cygdrive/c/Program Files/Common Files/Oracle/Java/javapath:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/bin:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/libnvvp:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v10.0/bin:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v10.0/libnvvp:/cygdrive/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/cygdrive/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/f/Matlab1/bin:/cygdrive/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/cygdrive/f/Xshell:/cygdrive/c/Users/HaoNan/AppData/Local/Programs/Python/Python310/Scripts:/cygdrive/c/Users/HaoNan/AppData/Local/Programs/Python/Python310:/cygdrive/f/Deep_learn/Anaconda/Scripts:/cygdrive/f/Deep_learn/Anaconda:/cygdrive/f/Deep_learn/Anaconda/Library/bin:/cygdrive/c/Program Files/NVIDIA Corporation/Nsight Compute 2020.2.1:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/extras/CUPTI/lib64:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/cudnn/bin:/cygdrive/f/RT-Thread_QEMU/env/tools/qemu/qemu32:/cygdrive/f/Git/Git/cmd:/cygdrive/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn:/cygdrive/c/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/120/DTS/Binn:/cygdrive/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit:/cygdrive/c/Program Files/dotnet:/cygdrive/i/MCU/GNU_tools_ARM/bin:/cygdrive/f/Deep_learn/Anaconda:/cygdrive/f/Deep_learn/Anaconda/Library/mingw-w64/bin:/cygdrive/f/Deep_learn/Anaconda/Library/usr/bin:/cygdrive/f/Deep_learn/Anaconda/Library/bin:/cygdrive/f/Deep_learn/Anaconda/Scripts:/cygdrive/c/Users/HaoNan/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Program Files/Bandizip:/cygdrive/f/Deep_learn/pycharm/PyCharm Community Edition 2021.3.3/bin:/cygdrive/f/Deep_learn/pycharm/PyCharm 2021.3.3/bin:/cygdrive/c/Users/HaoNan/AppData/Local/GitHubDesktop/bin:/cygdrive/i/MCU/Openocd/INSTALL/bin:/usr/bin:/cygdrive/f/vs code/Microsoft VS Code/Microsoft VS Code/bin:/cygdrive/c/Users/HaoNan/.eide/bin/builder/bin:/cygdrive/c/Users/HaoNan/.eide/bin/builder/utils:/cygdrive/c/Users/HaoNan/.eide/bin/scripts:/cygdrive/i/MCU/GNU_tools_ARM/bin:/cygdrive/i/MCU/Openocd/INSTALL/bin:/cygdrive/c/Users/HaoNan/.eide/bin/builder/msys/bin
+PATH = /cygdrive/c/Program Files/Common Files/Oracle/Java/javapath:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/bin:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/libnvvp:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v10.0/bin:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v10.0/libnvvp:/cygdrive/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/cygdrive/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/f/Matlab1/bin:/cygdrive/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/cygdrive/f/Xshell:/cygdrive/c/Users/HaoNan/AppData/Local/Programs/Python/Python310/Scripts:/cygdrive/c/Users/HaoNan/AppData/Local/Programs/Python/Python310:/cygdrive/f/Deep_learn/Anaconda/Scripts:/cygdrive/f/Deep_learn/Anaconda:/cygdrive/f/Deep_learn/Anaconda/Library/bin:/cygdrive/c/Program Files/NVIDIA Corporation/Nsight Compute 2020.2.1:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/extras/CUPTI/lib64:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/cudnn/bin:/cygdrive/f/RT-Thread_QEMU/env/tools/qemu/qemu32:/cygdrive/f/Git/Git/cmd:/cygdrive/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn:/cygdrive/c/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/120/DTS/Binn:/cygdrive/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit:/cygdrive/c/Program Files/dotnet:/cygdrive/i/MCU/GNU_tools_ARM/bin:/cygdrive/f/Deep_learn/Anaconda:/cygdrive/f/Deep_learn/Anaconda/Library/mingw-w64/bin:/cygdrive/f/Deep_learn/Anaconda/Library/usr/bin:/cygdrive/f/Deep_learn/Anaconda/Library/bin:/cygdrive/f/Deep_learn/Anaconda/Scripts:/cygdrive/c/Users/HaoNan/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Program Files/Bandizip:/cygdrive/f/Deep_learn/pycharm/PyCharm Community Edition 2021.3.3/bin:/cygdrive/f/Deep_learn/pycharm/PyCharm 2021.3.3/bin:/cygdrive/c/Users/HaoNan/AppData/Local/GitHubDesktop/bin:/cygdrive/i/MCU/Openocd/INSTALL/bin:/usr/bin:/cygdrive/f/vs code/Microsoft VS Code/Microsoft VS Code/bin
 # environment
 COMPUTERNAME = DESKTOP-MMIO2D6
 # default
@@ -178,8 +174,6 @@ NVTOOLSEXT_PATH = C:\Program Files\NVIDIA Corporation\NvToolsExt\
 PREFIX = arm-none-eabi-
 # environment
 LOGONSERVER = \\DESKTOP-MMIO2D6
-# environment
-EIDE_MSYS = C:\Users\HaoNan\.eide\bin\builder\msys\bin
 # environment
 USERNAME = 17yearoldHaoNan
 # makefile (from 'Makefile', line 93)
@@ -208,11 +202,11 @@ OS = Windows_NT
 GCC_VERSION = 11.2
 # makefile (from 'Makefile', line 25)
 OPT = -Og
- 
 # makefile
 .DEFAULT_GOAL := all
 # default
 MAKE_VERSION := 4.3
+ 
 # environment
 PROGRAMFILES(X86) = C:\Program Files (x86)
 # makefile (from 'Makefile', line 149)
@@ -228,7 +222,7 @@ NUMBER_OF_PROCESSORS = 6
 # environment
 PUBLIC = C:\Users\Public
 # environment
-!F: = f:\Cubemx\PRJ\make_application
+!F: = f:\Git\PRJ\stm32h7-bootloader-application\make_application
 # environment
 NVCUDASAMPLES10_0_ROOT = F:\Deep_learn\CUDA\NVIDIA Corporation\CUDA Samples\v10.0
 # makefile (from 'Makefile', line 87)
@@ -246,8 +240,6 @@ PROCESSOR_ARCHITECTURE = AMD64
 # environment
 PYCHARM COMMUNITY EDITION = F:\Deep_learn\pycharm\PyCharm Community Edition 2021.3.3\bin;
 # environment
-EIDE_TOOL_OPENOCD = I:\MCU\Openocd\INSTALL\bin
-# environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # makefile (from 'Makefile', line 32)
 BUILD_DIR = build
@@ -263,8 +255,6 @@ TEMP = /cygdrive/c/Users/HaoNan/AppData/Local/Temp
 VSCODE_IPC_HOOK = \\.\pipe\67c9db44112d2439cff4ff0999cb0352-1.70.2-main-sock
 # environment
 TERM = xterm-256color
-# environment
-DOTNET_CLI_TELEMETRY_OPTOUT = 1
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -281,7 +271,6 @@ TARGET = make_application
 SESSIONNAME = Console
 # makefile (from 'Makefile', line 65)
 ASM_SOURCES = startup_stm32h750xx.s
- 
 # makefile (from 'Makefile', line 23)
 DEBUG = 1
 # default
@@ -289,13 +278,14 @@ DEBUG = 1
 # environment
 PROCESSOR_REVISION = 7100
 # makefile (from 'Makefile', line 81)
+ 
 CC = $(PREFIX)gcc
 # environment
 NVCUDASAMPLES11_1_ROOT = F:\Deep_learn\CUDA\NVIDIA Corporation\CUDA\v11.1
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
 # variable set hash-table stats:
-# Load=139/1024=14%, Rehash=0, Collisions=23/250=9%
+# Load=134/1024=13%, Rehash=0, Collisions=22/245=9%
 
 # Pattern-specific Variable Values
 
@@ -303,12 +293,12 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
 
 # Directories
 
-# build (device 1919717404, inode 7318349394518090): 56 files, no impossibilities.
-# . (device 1919717404, inode 844424930254700): 13 files, no impossibilities.
-# Drivers/STM32H7xx_HAL_Driver/Src (device 1919717404, inode 562949953544202): 126 files, no impossibilities.
-# Core/Src (device 1919717404, inode 562949953544055): 6 files, no impossibilities.
+# build (device 1919717404, inode 844424930228442): 56 files, no impossibilities.
+# . (device 1919717404, inode 844424930228430): 12 files, no impossibilities.
+# Drivers/STM32H7xx_HAL_Driver/Src (device 1919717404, inode 844424930229830): 126 files, no impossibilities.
+# Core/Src (device 1919717404, inode 844424930228502): 6 files, no impossibilities.
 
-# 201 files, no impossibilities in 4 directories.
+# 200 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
@@ -317,7 +307,6 @@ build/%.o: %.c Makefile | build
 	$(CC) -c $(CFLAGS) $< -o $@
 
 build/%.o: %.s Makefile | build
- 
 #  recipe to execute (from 'Makefile', line 169):
 	$(AS) -c $(CFLAGS) $< -o $@
 
@@ -352,11 +341,11 @@ build/stm32h7xx_hal_exti.d:
 
 Core/Inc/main.h:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2022-08-17 17:10:39.878
 #  File has been updated.
 #  Successfully updated.
 
- 
 build/stm32h7xx_hal_flash_ex.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c Makefile Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h Core/Inc/stm32h7xx_hal_conf.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h Drivers/CMSIS/Include/core_cm7.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Include/mpu_armv7.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32h7xx_hal_flash_ex'
@@ -374,7 +363,6 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c:
 #  Successfully updated.
 
 # Not a target:
- 
 build/stm32h7xx_hal_pwr_ex.d:
 #  Implicit rule search has been done.
 #  Last modified 2022-08-18 20:14:49.4801929
@@ -405,7 +393,6 @@ build/stm32h7xx_hal_tim_ex.d:
 #  Implicit rule search has been done.
 #  Last modified 2022-08-18 20:14:46.2512614
 #  File has been updated.
- 
 #  Successfully updated.
 
 Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
@@ -447,7 +434,6 @@ build/stm32h7xx_hal.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c Makefile
 	$(CC) -c $(CFLAGS) $< -o $@
 
 build/stm32h7xx_hal_dma.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c Makefile Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h Core/Inc/stm32h7xx_hal_conf.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h Drivers/CMSIS/Include/core_cm7.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Include/mpu_armv7.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h | build
- 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32h7xx_hal_dma'
 #  Last modified 2022-08-18 21:04:04.5627402
@@ -466,6 +452,7 @@ Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h:
 build/stm32h7xx_hal_hsem.d:
 #  Implicit rule search has been done.
 #  Last modified 2022-08-18 20:14:48.2567126
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -526,6 +513,7 @@ Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 #  Last modified 2022-04-23 17:50:58.0830064
 #  File has been updated.
 #  Successfully updated.
+ 
 
 Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
 #  Implicit rule search has been done.
@@ -584,7 +572,6 @@ download:
 	-f I:/MCU/Openocd/INSTALL/scripts/target/stm32h7x_extern.cfg \
 	-c init \
 	-c halt \
- 
 	-c "flash write_image erase $(BUILD_DIR)/$(TARGET).hex 0x00000000" \
 	-c reset \
 	-c shutdown 
@@ -601,6 +588,7 @@ build/stm32h7xx_it.o: Core/Src/stm32h7xx_it.c Makefile Core/Src/stm32h7xx_it.c C
 #  Last modified 2022-08-18 21:04:01.4070579
 #  File has been updated.
 #  Successfully updated.
+ 
 #  recipe to execute (from 'Makefile', line 166):
 	$(CC) -c $(CFLAGS) $< -o $@
 
@@ -653,7 +641,6 @@ build/stm32h7xx_hal_rcc.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c 
 	$(CC) -c $(CFLAGS) $< -o $@
 
 # Not a target:
- 
 build/stm32h7xx_hal_cortex.d:
 #  Implicit rule search has been done.
 #  Last modified 2022-08-18 20:14:45.9071837
@@ -678,6 +665,7 @@ build/make_application.bin: build/make_application.elf | build
 
 # Not a target:
 Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c:
+ 
 #  Implicit rule search has been done.
 #  Last modified 2022-04-23 17:50:58.2434073
 #  File has been updated.
@@ -724,7 +712,6 @@ Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h:
 #  Successfully updated.
 
 # Not a target:
- 
 build/stm32h7xx_hal_tim.d:
 #  Implicit rule search has been done.
 #  Last modified 2022-08-18 20:14:46.0902246
@@ -766,6 +753,7 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c:
 #  Last modified 2022-04-23 17:50:58.2241916
 #  File has been updated.
 #  Successfully updated.
+ 
 
 # Not a target:
 Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c:
@@ -785,7 +773,6 @@ build/stm32h7xx_hal_rcc_ex.d:
 #  Implicit rule search has been done.
 #  Last modified 2022-08-18 20:14:47.3995196
 #  File has been updated.
- 
 #  Successfully updated.
 
 # Not a target:
@@ -848,7 +835,6 @@ build/stm32h7xx_hal_hsem.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.
 
 Core/Inc/stm32h7xx_hal_conf.h:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-08-17 17:10:39.7815609
 #  File has been updated.
 #  Successfully updated.
@@ -862,7 +848,7 @@ build/stm32h7xx_hal_rcc.d:
 
 build:
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-18 21:04:51.6067246
+#  Last modified 2022-08-19 17:29:56.0742899
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 182):
@@ -881,6 +867,7 @@ Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h:
 #  File has been updated.
 #  Successfully updated.
 
+ 
 Drivers/CMSIS/Include/mpu_armv7.h:
 #  Implicit rule search has been done.
 #  Last modified 2022-04-23 17:50:57.9645014
@@ -906,7 +893,6 @@ build/stm32h7xx_hal_dma_ex.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma
 #  Last modified 2022-08-18 21:04:04.8447384
 #  File has been updated.
 #  Successfully updated.
- 
 #  recipe to execute (from 'Makefile', line 166):
 	$(CC) -c $(CFLAGS) $< -o $@
 
@@ -1033,6 +1019,7 @@ build/stm32h7xx_hal_uart_ex.d:
 #  File has been updated.
 #  Successfully updated.
 
+ 
 # Not a target:
 startup_stm32h750xx.s:
 #  Implicit rule search has been done.
@@ -1056,7 +1043,6 @@ Drivers/CMSIS/Include/cmsis_gcc.h:
 build/system_stm32h7xx.o: Core/Src/system_stm32h7xx.c Makefile Core/Src/system_stm32h7xx.c Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h Drivers/CMSIS/Include/core_cm7.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Include/mpu_armv7.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h Core/Inc/stm32h7xx_hal_conf.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'system_stm32h7xx'
- 
 #  Last modified 2022-08-18 21:04:06.8116778
 #  File has been updated.
 #  Successfully updated.
@@ -1104,6 +1090,7 @@ build/startup_stm32h750xx.o: startup_stm32h750xx.s Makefile startup_stm32h750xx.
 
 build/stm32h7xx_hal_i2c.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c Makefile Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h Core/Inc/stm32h7xx_hal_conf.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h Drivers/CMSIS/Include/core_cm7.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Include/mpu_armv7.h Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h | build
 #  Implicit rule search has been done.
+ 
 #  Implicit/static pattern stem: 'stm32h7xx_hal_i2c'
 #  Last modified 2022-08-18 21:04:06.2380078
 #  File has been updated.
@@ -1152,7 +1139,6 @@ Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h:
 #  Last modified 2022-04-23 17:50:58.1291624
 #  File has been updated.
 #  Successfully updated.
- 
 
 Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h:
 #  Implicit rule search has been done.
@@ -1178,6 +1164,7 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-04-23 17:50:58.2126782
 #  File has been updated.
+ 
 #  Successfully updated.
 
 Drivers/CMSIS/Include/cmsis_version.h:
@@ -1216,15 +1203,14 @@ vpath %.c Core/Src:Drivers/STM32H7xx_HAL_Driver/Src
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 2 (1) / strings = 347 / storage = 8862 B / avg = 25 B
-# current buf: size = 8162 B / used = 707 B / count = 35 / avg = 20 B
- 
-# other used: total = 8155 B / count = 312 / avg = 26 B
-# other free: total = 7 B / max = 7 B / min = 7 B / avg = 7 B
+# strcache buffers: 2 (1) / strings = 346 / storage = 8842 B / avg = 25 B
+# current buf: size = 8162 B / used = 682 B / count = 34 / avg = 20 B
+# other used: total = 8160 B / count = 312 / avg = 26 B
+# other free: total = 2 B / max = 2 B / min = 2 B / avg = 2 B
 
-# strcache performance: lookups = 2803 / hit rate = 87%
+# strcache performance: lookups = 2802 / hit rate = 87%
 # hash-table stats:
-# Load=347/8192=4%, Rehash=0, Collisions=17/2803=1%
-# Finished Make data base on Fri Aug 19 15:07:45 2022
+# Load=346/8192=4%, Rehash=0, Collisions=17/2802=1%
+# Finished Make data base on Sat Sep  3 10:44:40 2022
 
  

@@ -3,14 +3,15 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # Built for x86_64-pc-cygwin
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Fri Aug 19 10:35:59 2022
+# Make data base, printed on Sat Sep  3 10:44:49 2022
 
-# Variables
  
+# Variables
 
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
@@ -23,15 +24,13 @@ LIBDIR =
 # environment
 LC_ALL = C
 # environment
-EIDE_BINARIES_VER = 8.3.0
-# environment
 USERPROFILE = C:\Users\HaoNan
 # environment
 VBOX_MSI_INSTALL_PATH = G:\VIRTUAL\
 # environment
 LOCALAPPDATA = C:\Users\HaoNan\AppData\Local
 # environment
-VSCODE_CWD = F:\Cubemx\PRJ\make_bootloader
+VSCODE_CWD = F:\Git\PRJ\stm32h7-bootloader-application\make_bootloader
 # environment
 SYSTEMROOT = C:\WINDOWS
 # makefile (from 'Makefile', line 154)
@@ -40,7 +39,6 @@ LIBS = -lc -lm -lnosys
 C_INCLUDES = -ICore/Inc -IDrivers/STM32H7xx_HAL_Driver/Inc -IDrivers/STM32H7xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32H7xx/Include -IDrivers/CMSIS/Include -IUser/Inc
 # environment
 PROCESSOR_LEVEL = 23
- 
 # makefile (from 'Makefile', line 90)
 SZ = $(PREFIX)size
 # environment
@@ -56,13 +54,15 @@ CPP_SOURCES = User/Src/w25q64.cpp Core/Src/main.cpp
 # makefile (from 'Makefile', line 115)
 C_DEFS = -DUSE_HAL_DRIVER -DSTM32H750xx
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16112_HZGHOZEUAONXFHLT
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15008_ZRYMIASFSQJLNYOE
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
+ 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
+ 
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -88,9 +88,9 @@ TMP = /cygdrive/c/Users/HaoNan/AppData/Local/Temp
 # makefile
 MAKEFLAGS = pqrR
 # environment
-ONEDRIVE = C:\Users\十七岁浩南\OneDrive
+ONEDRIVE = C:\Users\HaoNan\OneDrive
 # makefile
-CURDIR := /cygdrive/f/Cubemx/PRJ/make_bootloader
+CURDIR := /cygdrive/f/Git/PRJ/stm32h7-bootloader-application/make_bootloader
 # makefile (from 'Makefile', line 92)
 HEX = $(CP) -O ihex
 # environment
@@ -105,7 +105,6 @@ PROGRAMFILES = C:\Program Files
 MFLAGS = -pqrR
 # default
 .SHELLFLAGS := -c
- 
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # automatic
@@ -117,7 +116,8 @@ ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffuncti
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 16112
+VSCODE_PID = 15008
+ 
 # environment
 CUDA_PATH = F:\Deep_learn\CUDA\NVIDIA GPU Computing Toolkit\CUDA\v11.1
 # automatic
@@ -128,8 +128,6 @@ AS_INCLUDES =
 CP = $(PREFIX)objcopy
 # automatic
 *F = $(notdir $*)
-# environment
-EIDE_TOOL_GCC_ARM = I:\MCU\GNU_tools_ARM\bin
 # environment
 SW_SIM_TEMP = C:\ProgramData\SOLIDWORKS\SW_net_sim_temp\
 # automatic
@@ -157,7 +155,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /cygdrive/c/Program Files/Common Files/Oracle/Java/javapath:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/bin:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/libnvvp:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v10.0/bin:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v10.0/libnvvp:/cygdrive/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/cygdrive/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/f/Matlab1/bin:/cygdrive/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/cygdrive/f/Xshell:/cygdrive/c/Users/HaoNan/AppData/Local/Programs/Python/Python310/Scripts:/cygdrive/c/Users/HaoNan/AppData/Local/Programs/Python/Python310:/cygdrive/f/Deep_learn/Anaconda/Scripts:/cygdrive/f/Deep_learn/Anaconda:/cygdrive/f/Deep_learn/Anaconda/Library/bin:/cygdrive/c/Program Files/NVIDIA Corporation/Nsight Compute 2020.2.1:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/extras/CUPTI/lib64:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/cudnn/bin:/cygdrive/f/RT-Thread_QEMU/env/tools/qemu/qemu32:/cygdrive/f/Git/Git/cmd:/cygdrive/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn:/cygdrive/c/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/120/DTS/Binn:/cygdrive/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit:/cygdrive/c/Program Files/dotnet:/cygdrive/i/MCU/GNU_tools_ARM/bin:/cygdrive/f/Deep_learn/Anaconda:/cygdrive/f/Deep_learn/Anaconda/Library/mingw-w64/bin:/cygdrive/f/Deep_learn/Anaconda/Library/usr/bin:/cygdrive/f/Deep_learn/Anaconda/Library/bin:/cygdrive/f/Deep_learn/Anaconda/Scripts:/cygdrive/c/Users/HaoNan/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Program Files/Bandizip:/cygdrive/f/Deep_learn/pycharm/PyCharm Community Edition 2021.3.3/bin:/cygdrive/f/Deep_learn/pycharm/PyCharm 2021.3.3/bin:/cygdrive/c/Users/HaoNan/AppData/Local/GitHubDesktop/bin:/cygdrive/i/MCU/Openocd/INSTALL/bin:/usr/bin:/cygdrive/f/vs code/Microsoft VS Code/Microsoft VS Code/bin:/cygdrive/c/Users/HaoNan/.eide/bin/builder/bin:/cygdrive/c/Users/HaoNan/.eide/bin/builder/utils:/cygdrive/c/Users/HaoNan/.eide/bin/scripts:/cygdrive/i/MCU/GNU_tools_ARM/bin:/cygdrive/i/MCU/Openocd/INSTALL/bin:/cygdrive/c/Users/HaoNan/.eide/bin/builder/msys/bin
+PATH = /cygdrive/c/Program Files/Common Files/Oracle/Java/javapath:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/bin:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/libnvvp:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v10.0/bin:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v10.0/libnvvp:/cygdrive/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/cygdrive/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/f/Matlab1/bin:/cygdrive/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/cygdrive/f/Xshell:/cygdrive/c/Users/HaoNan/AppData/Local/Programs/Python/Python310/Scripts:/cygdrive/c/Users/HaoNan/AppData/Local/Programs/Python/Python310:/cygdrive/f/Deep_learn/Anaconda/Scripts:/cygdrive/f/Deep_learn/Anaconda:/cygdrive/f/Deep_learn/Anaconda/Library/bin:/cygdrive/c/Program Files/NVIDIA Corporation/Nsight Compute 2020.2.1:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/extras/CUPTI/lib64:/cygdrive/f/Deep_learn/CUDA/NVIDIA GPU Computing Toolkit/CUDA/v11.1/cudnn/bin:/cygdrive/f/RT-Thread_QEMU/env/tools/qemu/qemu32:/cygdrive/f/Git/Git/cmd:/cygdrive/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn:/cygdrive/c/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/120/DTS/Binn:/cygdrive/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit:/cygdrive/c/Program Files/dotnet:/cygdrive/i/MCU/GNU_tools_ARM/bin:/cygdrive/f/Deep_learn/Anaconda:/cygdrive/f/Deep_learn/Anaconda/Library/mingw-w64/bin:/cygdrive/f/Deep_learn/Anaconda/Library/usr/bin:/cygdrive/f/Deep_learn/Anaconda/Library/bin:/cygdrive/f/Deep_learn/Anaconda/Scripts:/cygdrive/c/Users/HaoNan/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Program Files/Bandizip:/cygdrive/f/Deep_learn/pycharm/PyCharm Community Edition 2021.3.3/bin:/cygdrive/f/Deep_learn/pycharm/PyCharm 2021.3.3/bin:/cygdrive/c/Users/HaoNan/AppData/Local/GitHubDesktop/bin:/cygdrive/i/MCU/Openocd/INSTALL/bin:/usr/bin:/cygdrive/f/vs code/Microsoft VS Code/Microsoft VS Code/bin
 # environment
 COMPUTERNAME = DESKTOP-MMIO2D6
 # default
@@ -166,7 +164,6 @@ MAKEFILES :=
 ^F = $(notdir $^)
 # environment
 SW_SIM_MPIT = INTELMPI
- 
 # makefile (from 'Makefile', line 102)
 FPU = -mfpu=fpv5-d16
 # environment
@@ -178,13 +175,12 @@ PROMPT = $P$G
 # environment
 NVTOOLSEXT_PATH = C:\Program Files\NVIDIA Corporation\NvToolsExt\
 # makefile (from 'Makefile', line 76)
+ 
 PREFIX = arm-none-eabi-
 # makefile (from 'Makefile', line 87)
 CPP = $(PREFIX)g++
 # environment
 LOGONSERVER = \\DESKTOP-MMIO2D6
-# environment
-EIDE_MSYS = C:\Users\HaoNan\.eide\bin\builder\msys\bin
 # environment
 USERNAME = 17yearoldHaoNan
 # makefile (from 'Makefile', line 99)
@@ -208,7 +204,6 @@ USERDOMAIN = DESKTOP-MMIO2D6
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
- 
 OS = Windows_NT
 # environment
 GCC_VERSION = 11.2
@@ -233,7 +228,7 @@ NUMBER_OF_PROCESSORS = 6
 # environment
 PUBLIC = C:\Users\Public
 # environment
-!F: = f:\Cubemx\PRJ\make_bootloader
+!F: = f:\Git\PRJ\stm32h7-bootloader-application\make_bootloader
 # environment
 NVCUDASAMPLES10_0_ROOT = F:\Deep_learn\CUDA\NVIDIA Corporation\CUDA Samples\v10.0
 # makefile (from 'Makefile', line 93)
@@ -243,6 +238,7 @@ APPDATA = C:\Users\HaoNan\AppData\Roaming
 # environment
 CUDA_PATH_V11_1 = F:\Deep_learn\CUDA\NVIDIA GPU Computing Toolkit\CUDA\v11.1
 # makefile (from 'Makefile', line 139)
+ 
 CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -g -gdwarf-2
 # environment
 HOMEDRIVE = C:
@@ -250,8 +246,6 @@ HOMEDRIVE = C:
 PROCESSOR_ARCHITECTURE = AMD64
 # environment
 PYCHARM COMMUNITY EDITION = F:\Deep_learn\pycharm\PyCharm Community Edition 2021.3.3\bin;
-# environment
-EIDE_TOOL_OPENOCD = I:\MCU\Openocd\INSTALL\bin
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # makefile (from 'Makefile', line 32)
@@ -268,8 +262,6 @@ TEMP = /cygdrive/c/Users/HaoNan/AppData/Local/Temp
 VSCODE_IPC_HOOK = \\.\pipe\67c9db44112d2439cff4ff0999cb0352-1.70.2-main-sock
 # environment
 TERM = xterm-256color
-# environment
-DOTNET_CLI_TELEMETRY_OPTOUT = 1
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -293,15 +285,13 @@ DEBUG = 1
 # environment
 PROCESSOR_REVISION = 7100
 # makefile (from 'Makefile', line 86)
- 
 CC = $(PREFIX)gcc
 # environment
 NVCUDASAMPLES11_1_ROOT = F:\Deep_learn\CUDA\NVIDIA Corporation\CUDA\v11.1
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
 # variable set hash-table stats:
- 
-# Load=141/1024=14%, Rehash=0, Collisions=23/210=11%
+# Load=136/1024=13%, Rehash=0, Collisions=27/218=12%
 
 # Pattern-specific Variable Values
 
@@ -309,11 +299,11 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
 
 # Directories
 
-# User/Src (device 1919717404, inode 844424930249370): 3 files, no impossibilities.
-# build (device 1919717404, inode 7318349394492925): 31 files, no impossibilities.
-# . (device 1919717404, inode 844424930246880): 13 files, no impossibilities.
-# Drivers/STM32H7xx_HAL_Driver/Src (device 1919717404, inode 1407374883670152): 21 files, no impossibilities.
-# Core/Src (device 1919717404, inode 562949953536234): 6 files, no impossibilities.
+# User/Src (device 1919717404, inode 844424930231259): 3 files, no impossibilities.
+# build (device 1919717404, inode 844424930229970): 31 files, no impossibilities.
+# . (device 1919717404, inode 844424930229958): 13 files, no impossibilities.
+# Drivers/STM32H7xx_HAL_Driver/Src (device 1919717404, inode 844424930231236): 21 files, no impossibilities.
+# Core/Src (device 1919717404, inode 844424930230005): 6 files, no impossibilities.
 
 # 74 files, no impossibilities in 5 directories.
 
@@ -333,6 +323,7 @@ build/%.o: %.s | build
 
 build/%.hex: build/%.elf | build
 #  recipe to execute (from 'Makefile', line 189):
+ 
 	$(HEX) $< $@
 	$(SZ) $@
 	
@@ -354,7 +345,6 @@ build/stm32h7xx_hal_tim_ex.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim
 #  recipe to execute (from 'Makefile', line 176):
 	$(CC) -c $(CFLAGS)  $< -o $@
 
- 
 build/stm32h7xx_hal_flash_ex.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32h7xx_hal_flash_ex'
@@ -371,15 +361,11 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c:
 #  File has been updated.
 #  Successfully updated.
 
-build/make_bootloader.bin: build/make_bootloader.elf | build
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'make_bootloader'
-#  Last modified 2022-08-18 21:34:27.8542323
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 193):
-	$(BIN) $< $@	
-	
+# Not a target:
+build/make_bootloader.bin:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 build/stm32h7xx_hal_exti.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c | build
 #  Implicit rule search has been done.
@@ -413,12 +399,13 @@ build/stm32h7xx_hal_dma.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c 
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 176):
+ 
 	$(CC) -c $(CFLAGS)  $< -o $@
 
 # Not a target:
 User/Src/w25q64.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-18 21:18:52.7878706
+#  Last modified 2022-08-19 17:17:59.6055156
 #  File has been updated.
 #  Successfully updated.
 
@@ -430,7 +417,6 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c:
 #  Successfully updated.
 
 build/stm32h7xx_hal_rcc_ex.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c | build
- 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32h7xx_hal_rcc_ex'
 #  Last modified 2022-08-18 21:19:22.1549039
@@ -482,6 +468,7 @@ build/stm32h7xx_it.o: Core/Src/stm32h7xx_it.c | build
 #  Last modified 2022-08-18 21:19:20.8783662
 #  File has been updated.
 #  Successfully updated.
+ 
 #  recipe to execute (from 'Makefile', line 176):
 	$(CC) -c $(CFLAGS)  $< -o $@
 
@@ -489,7 +476,6 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 202):
 	-rm -fR $(BUILD_DIR)
 
@@ -549,24 +535,18 @@ build/stm32h7xx_hal_msp.o: Core/Src/stm32h7xx_hal_msp.c | build
 	$(CC) -c $(CFLAGS)  $< -o $@
 
 # Not a target:
- 
 Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-04-23 17:50:58.2241916
 #  File has been updated.
 #  Successfully updated.
+ 
 
 # Not a target:
 Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c:
+ 
 #  Implicit rule search has been done.
 #  Last modified 2022-04-23 17:50:58.2106777
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-Core/Src/main.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-18 21:34:24.855983
 #  File has been updated.
 #  Successfully updated.
 
@@ -583,6 +563,7 @@ extern:
 #  recipe to execute (from 'Makefile', line 207):
 	openocd -f I:/MCU/Openocd/INSTALL/scripts/interface/cmsis-dap.cfg -f I:/MCU/Openocd/INSTALL/scripts/target/stm32h7x_extern.cfg
 	
+ 
 
 # Not a target:
 Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:
@@ -603,7 +584,9 @@ all: build/make_bootloader.elf build/make_bootloader.hex build/make_bootloader.b
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/13=0%
 
 build/stm32h7xx_hal_cortex.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c | build
 #  Implicit rule search has been done.
@@ -622,11 +605,11 @@ build/stm32h7xx_hal_hsem.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 176):
 	$(CC) -c $(CFLAGS)  $< -o $@
- 
 
 build:
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-18 21:34:27.8532324
+#  Last modified 2022-08-19 17:30:05.4274167
+ 
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 196):
@@ -660,6 +643,7 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-04-23 17:50:58.2444084
 #  File has been updated.
+ 
 #  Successfully updated.
 
 connect:
@@ -686,11 +670,12 @@ build/stm32h7xx_hal_gpio.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 176):
 	$(CC) -c $(CFLAGS)  $< -o $@
- 
 
+ 
 build/stm32h7xx_hal_pwr.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32h7xx_hal_pwr'
+ 
 #  Last modified 2022-08-18 21:19:23.9475086
 #  File has been updated.
 #  Successfully updated.
@@ -706,6 +691,7 @@ build/stm32h7xx_hal_flash.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flas
 #  recipe to execute (from 'Makefile', line 176):
 	$(CC) -c $(CFLAGS)  $< -o $@
 
+ 
 build/stm32h7xx_hal_pwr_ex.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32h7xx_hal_pwr_ex'
@@ -749,17 +735,19 @@ build/stm32h7xx_hal_tim.o: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32h7xx_hal_tim'
 #  Last modified 2022-08-18 21:19:24.75369
- 
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 176):
 	$(CC) -c $(CFLAGS)  $< -o $@
+ 
 
 build/make_bootloader.elf: build/stm32h7xx_it.o build/stm32h7xx_hal_msp.o build/stm32h7xx_hal_cortex.o build/stm32h7xx_hal_qspi.o build/stm32h7xx_hal_rcc.o build/stm32h7xx_hal_rcc_ex.o build/stm32h7xx_hal_flash.o build/stm32h7xx_hal_flash_ex.o build/stm32h7xx_hal_gpio.o build/stm32h7xx_hal_hsem.o build/stm32h7xx_hal_dma.o build/stm32h7xx_hal_dma_ex.o build/stm32h7xx_hal_mdma.o build/stm32h7xx_hal_pwr.o build/stm32h7xx_hal_pwr_ex.o build/stm32h7xx_hal.o build/stm32h7xx_hal_exti.o build/stm32h7xx_hal_tim.o build/stm32h7xx_hal_tim_ex.o build/system_stm32h7xx.o build/stm32h7xx_hal_i2c.o build/stm32h7xx_hal_i2c_ex.o build/startup_stm32h750xx.o build/w25q64.o build/main.o Makefile
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-18 21:34:27.5881723
+#  Last modified 2022-08-19 17:05:13.4543559
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/13=0%
 #  recipe to execute (from 'Makefile', line 185):
 	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
 	$(SZ) $@
@@ -775,6 +763,7 @@ build/startup_stm32h750xx.o: startup_stm32h750xx.s | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'startup_stm32h750xx'
 #  Last modified 2022-08-18 21:19:25.7838033
+ 
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 182):
@@ -794,17 +783,14 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-04-23 17:50:58.2251917
 #  File has been updated.
+ 
 #  Successfully updated.
 
-build/main.o: Core/Src/main.cpp | build
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'main'
-#  Last modified 2022-08-18 21:34:27.4121332
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 179):
-	$(CPP) -c $(CFLAGS)  $< -o $@
- 
+# Not a target:
+build/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Core/Src/stm32h7xx_hal_msp.c:
@@ -822,23 +808,22 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c:
 
 gdb:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 220):
 	arm-none-eabi-gdb $(BUILD_DIR)/$(TARGET).elf -c "target extended-remote 127.0.0.1:3333"
 
-build/make_bootloader.hex: build/make_bootloader.elf | build
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'make_bootloader'
-#  Last modified 2022-08-18 21:34:27.7402066
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 189):
-	$(HEX) $< $@
-	$(SZ) $@
-	
+ 
+# Not a target:
+build/make_bootloader.hex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
 
 # Not a target:
+ 
 Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-04-23 17:50:58.2261923
@@ -847,15 +832,34 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c:
 
 build/w25q64.o: User/Src/w25q64.cpp | build
 #  Implicit rule search has been done.
+ 
 #  Implicit/static pattern stem: 'w25q64'
-#  Last modified 2022-08-18 21:19:25.9950406
+#  Last modified 2022-08-19 15:26:54.2424806
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build/w25q64.o
+# automatic
+# * := w25q64
+# automatic
+# < := User/Src/w25q64.cpp
+# automatic
+# + := User/Src/w25q64.cpp
+# automatic
+# % := 
+# automatic
+# ^ := User/Src/w25q64.cpp
+# automatic
+# ? := User/Src/w25q64.cpp
+# automatic
+# | := build
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/23=9%
 #  recipe to execute (from 'Makefile', line 179):
 	$(CPP) -c $(CFLAGS)  $< -o $@
 
 # files hash-table stats:
-# Load=63/1024=6%, Rehash=0, Collisions=16/439=4%
+# Load=62/1024=6%, Rehash=0, Collisions=14/413=3%
 # VPATH Search Paths
 
 vpath %.c Core/Src:Drivers/STM32H7xx_HAL_Driver/Src
@@ -865,13 +869,12 @@ vpath %.cpp Core/Src:User/Src
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 167 / storage = 3769 B / avg = 22 B
-# current buf: size = 8162 B / used = 3769 B / count = 167 / avg = 22 B
+# strcache buffers: 1 (0) / strings = 163 / storage = 3723 B / avg = 22 B
+# current buf: size = 8162 B / used = 3723 B / count = 163 / avg = 22 B
 
- 
-# strcache performance: lookups = 339 / hit rate = 50%
+# strcache performance: lookups = 321 / hit rate = 49%
 # hash-table stats:
-# Load=167/8192=2%, Rehash=0, Collisions=7/339=2%
-# Finished Make data base on Fri Aug 19 10:35:59 2022
+# Load=163/8192=2%, Rehash=0, Collisions=7/321=2%
+# Finished Make data base on Sat Sep  3 10:44:49 2022
 
  

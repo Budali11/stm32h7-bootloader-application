@@ -1,5 +1,5 @@
 make.exe --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/cygdrive/f/Cubemx/PRJ/make_bootloader'
+make: Entering directory '/cygdrive/f/Git/PRJ/stm32h7-bootloader-application/make_bootloader'
 mkdir build		
 arm-none-eabi-gcc -c -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32H750xx -ICore/Inc -IDrivers/STM32H7xx_HAL_Driver/Inc -IDrivers/STM32H7xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32H7xx/Include -IDrivers/CMSIS/Include -IUser/Inc -O0 -Wall -fdata-sections -ffunction-sections -g -gdwarf-2  Core/Src/stm32h7xx_it.c -o build/stm32h7xx_it.o
 arm-none-eabi-gcc -c -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32H750xx -ICore/Inc -IDrivers/STM32H7xx_HAL_Driver/Inc -IDrivers/STM32H7xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32H7xx/Include -IDrivers/CMSIS/Include -IUser/Inc -O0 -Wall -fdata-sections -ffunction-sections -g -gdwarf-2  Core/Src/stm32h7xx_hal_msp.c -o build/stm32h7xx_hal_msp.o
@@ -31,5 +31,5 @@ arm-none-eabi-size build/make_bootloader.elf
 arm-none-eabi-objcopy -O ihex build/make_bootloader.elf build/make_bootloader.hex
 arm-none-eabi-size build/make_bootloader.hex
 arm-none-eabi-objcopy -O binary -S build/make_bootloader.elf build/make_bootloader.bin	
-make: Leaving directory '/cygdrive/f/Cubemx/PRJ/make_bootloader'
+make: Leaving directory '/cygdrive/f/Git/PRJ/stm32h7-bootloader-application/make_bootloader'
  

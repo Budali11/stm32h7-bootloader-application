@@ -259,23 +259,19 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 	
 	3. linker scripts的语法和使用
 	
-	  在这个工程中，我们主要了解MEMORY指令、LMA和VMA。其他的建议去官方资料详细查看。[Linker scripts (haw-hamburg.de)](https://users.informatik.haw-hamburg.de/~krabat/FH-Labor/gnupro/5_GNUPro_Utilities/c_Using_LD/ldLinker_scripts.html#Concepts)
+	 在这个工程中，我们主要了解MEMORY指令、LMA和VMA。其他的建议去官方资料详细查看。[Linker scripts (haw-hamburg.de)](https://users.informatik.haw-hamburg.de/~krabat/FH-Labor/gnupro/5_GNUPro_Utilities/c_Using_LD/ldLinker_scripts.html#Concepts)
 	
-	  MEMORY可以定义一个或多个内存区域，可以指定起始地址、长度和属性（可读可写可执行），这些内存区域的名字不能重复。例如：
+	 MEMORY可以定义一个或多个内存区域，可以指定起始地址、长度和属性（可读可写可执行），这些内存区域的名字不能重复。例如：
 	
-	  ~~~Linker Scripts
 	  MEMORY
 	  {
 	  FLASH (rx)      : ORIGIN = 0x8000000, LENGTH = 128K
 	  RAM_D1 (xrw)      : ORIGIN = 0x24000000, LENGTH = 512K
 	  }
-	  ~~~
 	
-	  这里我们定义了一个名为FLASH的内存区域，它的属性是可读(r)、可执行(x)，起始地址是0x8000000，长度是128KB。还有一个名为RAM_D1的内存区域，它的属性是可读(r)、可执行(x)、可写(w)，起始地址0x24000000，长度为512KB。
+	 这里我们定义了一个名为FLASH的内存区域，它的属性是可读(r)、可执行(x)，起始地址是0x8000000，长度是128KB。还有一个名为RAM_D1的内存区域，它的属性是可读(r)、可执行(x)、可写(w)，起始地址0x24000000，长度为512KB。定义了一个内存区域后，我们可以在输出段后添加` >FLASH`来指定该段要加载到哪个地址。例如：
 	
-	  定义了一个内存区域后，我们可以在输出段后添加` >FLASH`来指定该段要加载到哪个地址。例如：
-	
-	  ~~~Linker Scripts
+    ```
 	  SECTIONS
 	  {
 	      .isr_vector :
@@ -296,41 +292,41 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 	          _edata = .;        /* define a global symbol at data end */
 	      } >RAM_D1 AT> FLASH
 	  }
-	  ~~~
+    ```
 	
-	  这里把.isr_vector段（中断向量表）加载到了FLASH这块区域。而.data段后面有两个指令，一个是` >RAM_D1`， 另一个是` AT> FLASH`。这里就引申出了LMA和VMA的不同了。
+	 这里把.isr_vector段（中断向量表）加载到了FLASH这块区域。而.data段后面有两个指令，一个是` >RAM_D1`， 另一个是` AT> FLASH`。这里就引申出了LMA和VMA的不同了。
 	
-	  > virtual address (VMA)：VMA是指程序运行时所用的地址，也是大多数情况下我们使用的地址。我们平时用STM32时，程序都以0x08000000为起始地址，这个0x08000000既是VMA也是LMA，因为在官方的system_stm32h7xx.c文件中，定义了向量表的起始地址是0x08000000；在链接文件中，FLASH的起始地址也是0x08000000。一个是在程序中使用的，是程序运行过程中使用的；另一个是在程序外部，程序并不关心。
-	  >
-	  > <img src="Doc\VMA.png" alt="VMA" style="zoom:80%;" />
-	  >
-	  > 这里的FLASH_BANK1_BASE也就是0x08000000。
-	  >
-	  > load address (LMA)：LMA就是我们要烧录程序的地址。对于bootloader，应该下载到0x08000000这个地址，而Application要下载到bootloader之后，在我们这个工程里是0x90000000(QSPI_BASE)。
-	  >
-	  > bootloader烧录地址：
-	  >
-	  > <img src="Doc\烧录地址.png" style="zoom: 67%;" />
-	  >
-	  > 可以看到由于程序需要烧录在0x08000000，所以openocd擦除了0x08000000到0x08005de0的位置。（0x5de0是这个程序的大小）。
-	  >
-	  > application烧录地址：
-	  >
-	  > <img src="Doc\烧录地址2.png" style="zoom:67%;" />
+	 > virtual address (VMA)：VMA是指程序运行时所用的地址，也是大多数情况下我们使用的地址。我们平时用STM32时，程序都以0x08000000为起始地址，这个0x08000000既是VMA也是LMA，因为在官方的system_stm32h7xx.c文件中，定义了向量表的起始地址是0x08000000；在链接文件中，FLASH的起始地址也是0x08000000。一个是在程序中使用的，是程序运行过程中使用的；另一个是在程序外部，程序并不关心。
+	 >
+	 > <img src="Doc\VMA.png" alt="VMA" style="zoom:80%;" />
+	 >
+	 > 这里的FLASH_BANK1_BASE也就是0x08000000。
+	 >
+	 > load address (LMA)：LMA就是我们要烧录程序的地址。对于bootloader，应该下载到0x08000000这个地址，而Application要下载到bootloader之后，在我们这个工程里是0x90000000(QSPI_BASE)。
+	 >
+	 > bootloader烧录地址：
+	 >
+	 > <img src="Doc\烧录地址.png" style="zoom: 67%;" />
+	 >
+	 > 可以看到由于程序需要烧录在0x08000000，所以openocd擦除了0x08000000到0x08005de0的位置。（0x5de0是这个程序的大小）。
+	 >
+	 > application烧录地址：
+	 >
+	 > <img src="Doc\烧录地址2.png" style="zoom:67%;" />
 	
-	  通常.text（代码）和.rodata段都放在FLASH（也就是ROM）里。
+	 通常.text（代码）和.rodata段都放在FLASH（也就是ROM）里。
 	
-	  > 关于ROM和RAM，你可能会有些疑惑：如今的FLASH都是可读写的，为何在单片机里还是ROM呢？这是因为我们指定了这块FLASH的属性(attribute)为rx，r为read，x为execute，即可读可执行（仅nor flash支持可执行，nand flash不支持）。而RAM的属性一般是rxw。
+	 > 关于ROM和RAM，你可能会有些疑惑：如今的FLASH都是可读写的，为何在单片机里还是ROM呢？这是因为我们在链接脚本(Linker scripts)里指定了这块FLASH的属性(attribute)为rx，r为read，x为execute，即可读可执行（仅nor flash支持可执行，nand flash不支持）。而RAM的属性一般是rxw。
 	
 	4. 修改代码的链接地址
 	
-	  打开链接脚本文件STM32H750VBTx_FLASH.ld，如果你是keil开发，请移步其他教程（大概是在Target选项卡里修改存储的配置）。把原来FLASH的起始地址008000000改为0x90000000，LENGTH改为8192k。
+	 打开链接脚本文件STM32H750VBTx_FLASH.ld，如果你是keil开发，请移步其他教程（大概是在Target选项卡里修改存储的配置）。把原来FLASH的起始地址0x8000000改为0x90000000，LENGTH改为8192k(根据自己板子上的Flash容量确定)。
 	
-	  <img src="Doc\链接脚本文件修改.png" alt="修改" style="zoom:100%;" />
+	 <img src="Doc/链接脚本文件修改.png" alt="修改" style="zoom:100%;" />
 	
 	5. 点灯
 	
-	  <img src="Doc\点灯.png" alt="点灯" style="zoom:100%;" />
+	<img src="Doc/lights.png" alt="lights" style="zoom:100%;" />
 	
 
 ### 三、程序烧录
@@ -339,7 +335,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	打开Openocd安装路径下的\scripts\target文件夹，找到stm32h7x.cfg，复制为stm32h7x_extern.cfg，打开并添加` set QUADSPI 1`。
 
-	<img src="Doc\Openocd配置.png" alt="Openocd" style="zoom:100%;" />
+	<img src="Doc/Openocd配置.png" alt="Openocd" style="zoom:100%;" />
 
 * 编辑makefile
 
@@ -363,7 +359,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	注意__connect__ 和__download__ 下的路径要改为自己的路径。
 
-	<img src="Doc\makefile.png" alt="makefile" style="zoom: 80%;" />
+	<img src="Doc/makefile.png" alt="makefile" style="zoom: 80%;" />
 
 	两个工程都配置完成后，`make`编译，再`make download`烧录。__connect__和__gdb__用于gdb调试。烧录完两个程序后，可以看到板子执行了APP的闪灯程序。
 
@@ -377,7 +373,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	* QSPI时钟源选择。应该选择HCLK为时钟源，因为跳转到App后复位，时钟源会重置为默认的HCLK。
 
-		<img src="Doc\QSPI默认时钟配置.png" style="zoom:100%;" />
+		<img src="Doc/QSPI默认时钟配置.png" style="zoom:100%;" />
 
 2. 内存区域配置
 
@@ -389,17 +385,17 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 
 	* 在你烧录完bootloader后，确保Openocd能读出w25qxx芯片的信息（具体参考这位大佬的视频[[Linux开发STM32h750\]使用OpenOCD下载程序到外部flash_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1uS4y1C7bn?spm_id_from=333.880.my_history.page.click&vd_source=d01618f4fdc9bb0fa04158228c78a2ac)），并且在`JumpToApplication();`之前，JumpToApplication是app中Reset_Handler的地址，APPLICATION_ADDRESS指向的是app中堆栈指针的值。
 
-		<img src="Doc\bootloader1.png" style="zoom:100%;" />
+		<img src="Doc/bootloader1.png" style="zoom:100%;" />
 
 		图中0x9000339d是app中Reset_Handler的地址；0x2407ffff是我设置的堆栈指针(_estack)的值。
 
 		Reset_Handler
 
-		<img src="Doc\Reset_Handler.png" style="zoom:100%;" />
+		<img src="Doc/Reset_Handler.png" style="zoom:100%;" />
 
 		_estack:
 
-		<img src="Doc\_estack.png" style="zoom:100%;" />
+		<img src="Doc/_estack.png" style="zoom:100%;" />
 
 		
 

@@ -45,11 +45,11 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		 */
   		void Flash_T::m_exit_quad_mode(void)
   		{
-  			QSPI_CommandTypeDef cmd = {0};
-  			cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;
-  		    cmd.Instruction = 0xFF;
-  		    HAL_QSPI_Command(&hqspi, &cmd, 100);
-  			m_QSPI_mode = SPI;
+            QSPI_CommandTypeDef cmd = {0};
+            cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;
+            cmd.Instruction = 0xFF;
+            HAL_QSPI_Command(&hqspi, &cmd, 100);
+            m_QSPI_mode = SPI;
   		}
   		~~~
 
@@ -62,22 +62,22 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		 */
   		void Flash_T::m_reset(void)
   		{
-  			QSPI_CommandTypeDef cmd = {0};
-  			
-  			cmd.Instruction = 0x66;
-  		    cmd.AddressSize = QSPI_ADDRESS_24_BITS;
-  			if(m_QSPI_mode)
-  				cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;
-  			else
-  				cmd.InstructionMode = QSPI_INSTRUCTION_1_LINE;
-  			
-  			if(HAL_QSPI_Command(&hqspi, &cmd, 100) != HAL_OK)
-  				while(1);
-  			
-  			m_wait(); //wait for busy
-  			cmd.Instruction = 0x99;
-  			if(HAL_QSPI_Command(&hqspi, &cmd, 100) != HAL_OK)
-  				while(1);
+            QSPI_CommandTypeDef cmd = {0};
+            
+            cmd.Instruction = 0x66;
+            cmd.AddressSize = QSPI_ADDRESS_24_BITS;
+            if(m_QSPI_mode)
+            cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;
+            else
+            	cmd.InstructionMode = QSPI_INSTRUCTION_1_LINE;
+            
+            if(HAL_QSPI_Command(&hqspi, &cmd, 100) != HAL_OK)
+            	while(1);
+            
+            m_wait(); //wait for busy
+            cmd.Instruction = 0x99;
+            if(HAL_QSPI_Command(&hqspi, &cmd, 100) != HAL_OK)
+            	while(1);
   		}
   		~~~
 
@@ -89,40 +89,37 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		/**
   		 * @brief	enter quad spi mode and set member QSPI_mode to QSPI(true)
   		 * @param	none
-  		 *  
   		 */
   		void Flash_T::m_set_quad_mode(void)
   		{
-  			uint8_t tmp = 0;
-  			m_read_register(&tmp, 2);
-  			if((tmp & 0x2) == 0)
-  			{
-  				tmp |= 0x02;
-  				m_write_register(tmp, 2);
-  			}
-  			if(((tmp >> 1) & 0x1) != 1)
-  				while(1);
-  		
-  			//enter quad mode
-  			QSPI_CommandTypeDef cmd = {0};
-  			cmd.Instruction = 0x38;
-  			cmd.InstructionMode = QSPI_INSTRUCTION_1_LINE;
-  		    cmd.AddressSize = QSPI_ADDRESS_24_BITS;
-  			if(HAL_QSPI_Command(&hqspi, &cmd, 100) != HAL_OK)
-  				while(1);
-  			m_QSPI_mode = QSPI;
-  		
-  			//set ReadParam
-  			cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;
-  		    cmd.Instruction = 0xC0;
-  		    cmd.DataMode = QSPI_DATA_4_LINES;
-  		    cmd.NbData = 1;
-  			tmp = 0x03 << 4;
-  			m_write_enable();
-  			if(HAL_QSPI_Command(&hqspi, &cmd, 100) == HAL_OK)
-  		    {
-  		        HAL_QSPI_Transmit(&hqspi, &tmp, 100);
-  		    }
+            uint8_t tmp = 0;
+            m_read_register(&tmp, 2);
+            if((tmp & 0x2) == 0)
+            {
+                tmp |= 0x02;
+                m_write_register(tmp, 2);
+            }
+            if(((tmp >> 1) & 0x1) != 1)
+                while(1);
+            
+            //enter quad mode
+            QSPI_CommandTypeDef cmd = {0};
+            cmd.Instruction = 0x38;
+            cmd.InstructionMode = QSPI_INSTRUCTION_1_LINE;
+            cmd.AddressSize = QSPI_ADDRESS_24_BITS;
+            if(HAL_QSPI_Command(&hqspi, &cmd, 100) != HAL_OK)
+                while(1);
+            m_QSPI_mode = QSPI;
+            
+            //set ReadParam
+            cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;
+            cmd.Instruction = 0xC0;
+            cmd.DataMode = QSPI_DATA_4_LINES;
+            cmd.NbData = 1;
+            tmp = 0x03 << 4;
+            m_write_enable();
+            if(HAL_QSPI_Command(&hqspi, &cmd, 100) == HAL_OK)
+                HAL_QSPI_Transmit(&hqspi, &tmp, 100);
   		}
   		~~~
 
@@ -133,31 +130,35 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		 * @brief	read w25q64 id
   		 * @param	none
   		 * @retval	id if read success and HAL_ERROR if sending message error
-  		 * @note	you can add something to detect whether what you have read is the correct id 
+  		 * @note	you can add something to detect if what you have read is the correct id 
   		 */
   		uint16_t Flash_T::m_readJEDECID(void)
   		{
-  			QSPI_CommandTypeDef cmd = {0};
-  			uint8_t tmp[2] = {0};
-  			uint16_t ret = 0;
-  			cmd.Instruction = 0x90;
-  			if(m_QSPI_mode == QSPI) //choose line mode according to QSPI_mode
-  				{cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;cmd.DataMode = QSPI_DATA_4_LINES;}
-  			else
-  				{cmd.InstructionMode = QSPI_INSTRUCTION_1_LINE;cmd.DataMode = QSPI_DATA_1_LINE;}
-  			cmd.Address = 0;
-  			cmd.AddressMode = QSPI_ADDRESS_4_LINES;
-  			cmd.AddressSize = QSPI_ADDRESS_24_BITS;
-  			
-  			cmd.NbData = 2;
-  			if(HAL_QSPI_Command(&hqspi, &cmd, 100) != HAL_OK)
-  				return HAL_ERROR;
-  			
-  			if(HAL_QSPI_Receive(&hqspi, tmp, 100) != HAL_OK)
-  				return HAL_ERROR;
-  			ret |= tmp[0] << 8;
-  			ret |= tmp[1] << 0;
-  			return ret;
+            QSPI_CommandTypeDef cmd = {0};
+            uint8_t tmp[2] = {0};
+            uint16_t ret = 0;
+            cmd.Instruction = 0x90;
+            if(m_QSPI_mode == QSPI) { //choose line mode according to QSPI_mode 
+                cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;
+                cmd.DataMode = QSPI_DATA_4_LINES;
+            }
+            else {
+                cmd.InstructionMode = QSPI_INSTRUCTION_1_LINE;
+                cmd.DataMode = QSPI_DATA_1_LINE;
+            }
+            cmd.Address = 0;
+            cmd.AddressMode = QSPI_ADDRESS_4_LINES;
+            cmd.AddressSize = QSPI_ADDRESS_24_BITS;
+            
+            cmd.NbData = 2;
+            if(HAL_QSPI_Command(&hqspi, &cmd, 100) != HAL_OK)
+                return HAL_ERROR;
+            
+            if(HAL_QSPI_Receive(&hqspi, tmp, 100) != HAL_OK)
+                return HAL_ERROR;
+            ret |= tmp[0] << 8;
+            ret |= tmp[1] << 0;
+            return ret;
   		}
   		~~~
 
@@ -171,24 +172,23 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		 */
   		void Flash_T::memory_map(void)
   		{
-  			QSPI_CommandTypeDef cmd = {0};
-  			QSPI_MemoryMappedTypeDef cfg = {0};
-  		
-  			cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;
-  			cmd.Instruction = 0xEB; //quad fast read
-  			cmd.AddressMode = QSPI_ADDRESS_4_LINES;
-  			cmd.AddressSize = QSPI_ADDRESS_24_BITS;
-  			cmd.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
-  			cmd.DataMode = QSPI_DATA_4_LINES;
-  			cmd.DummyCycles = 8;
-  		
-  			cfg.TimeOutActivation = QSPI_TIMEOUT_COUNTER_DISABLE;
-  		  	cfg.TimeOutPeriod = 0;
-  		 
-  			if (HAL_QSPI_MemoryMapped(&hqspi, &cmd, &cfg) != HAL_OK)
-  			{
-  				LED_Blink(10); //if memory map error, blink to indicate
-  			}
+            QSPI_CommandTypeDef cmd = {0};
+            QSPI_MemoryMappedTypeDef cfg = {0};
+            
+            cmd.InstructionMode = QSPI_INSTRUCTION_4_LINES;
+            cmd.Instruction = 0xEB; //quad fast read
+            cmd.AddressMode = QSPI_ADDRESS_4_LINES;
+            cmd.AddressSize = QSPI_ADDRESS_24_BITS;
+            cmd.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
+            cmd.DataMode = QSPI_DATA_4_LINES;
+            cmd.DummyCycles = 8;
+            
+            cfg.TimeOutActivation = QSPI_TIMEOUT_COUNTER_DISABLE;
+            cfg.TimeOutPeriod = 0;
+            
+            if (HAL_QSPI_MemoryMapped(&hqspi, &cmd, &cfg) != HAL_OK) {
+                LED_Blink(10); //if memory map error, blink to indicate
+            }
   		}
   		~~~
 
@@ -205,8 +205,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   	* 清除pending的中断，进入特权模式，全局中断除能，DeInit IO口。
 
   		~~~C++
-  		for(uint8_t i = 0; i < 8; i++) //clear all NVIC Enable and Pending registers
-  		{
+  		for(uint8_t i = 0; i < 8; i++) { //clear all NVIC Enable and Pending registers
   		    NVIC->ICER[i]=0xFFFFFFFF;
   		    NVIC->ICPR[i]=0xFFFFFFFF;
   		}
@@ -298,7 +297,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 	
 	 > virtual address (VMA)：VMA是指程序运行时所用的地址，也是大多数情况下我们使用的地址。我们平时用STM32时，程序都以0x08000000为起始地址，这个0x08000000既是VMA也是LMA，因为在官方的system_stm32h7xx.c文件中，定义了向量表的起始地址是0x08000000；在链接文件中，FLASH的起始地址也是0x08000000。一个是在程序中使用的，是程序运行过程中使用的；另一个是在程序外部，程序并不关心。
 	 >
-	 > <img src="Doc\VMA.png" alt="VMA" style="zoom:80%;" />
+	 > <img src="Doc/VMA.png" alt="VMA" style="zoom:80%;" />
 	 >
 	 > 这里的FLASH_BANK1_BASE也就是0x08000000。
 	 >
@@ -306,13 +305,13 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 	 >
 	 > bootloader烧录地址：
 	 >
-	 > <img src="Doc\烧录地址.png" style="zoom: 67%;" />
+	 > <img src="Doc/烧录地址.png" style="zoom: 67%;" />
 	 >
 	 > 可以看到由于程序需要烧录在0x08000000，所以openocd擦除了0x08000000到0x08005de0的位置。（0x5de0是这个程序的大小）。
 	 >
 	 > application烧录地址：
 	 >
-	 > <img src="Doc\烧录地址2.png" style="zoom:67%;" />
+	 > <img src="Doc/烧录地址2.png" style="zoom:67%;" />
 	
 	 通常.text（代码）和.rodata段都放在FLASH（也就是ROM）里。
 	
@@ -357,11 +356,11 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 		arm-none-eabi-gdb $(BUILD_DIR)/$(TARGET).elf
 	~~~
 
-	注意__connect__ 和__download__ 下的路径要改为自己的路径。
+	注意**connect** 和**download** 下的路径要改为自己的路径。
 
 	<img src="Doc/makefile.png" alt="makefile" style="zoom: 80%;" />
 
-	两个工程都配置完成后，`make`编译，再`make download`烧录。__connect__和__gdb__用于gdb调试。烧录完两个程序后，可以看到板子执行了APP的闪灯程序。
+	两个工程都配置完成后，`make`编译，再`make download`烧录。**connect**和**gdb**用于gdb调试。烧录完两个程序后，可以看到板子执行了APP的闪灯程序。
 
 	Openocd具体使用请参照上一篇文章或者Openocd官网。
 

@@ -202,7 +202,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		SysTick->VAL = 0;	//clear current systick value
   		~~~
 
-  	* 清除pending的中断，进入特权模式，全局中断除能，DeInit IO口。
+  	* 清除pending的中断，进入特权模式，全局中断除能。
 
   		~~~C++
   		for(uint8_t i = 0; i < 8; i++) { //clear all NVIC Enable and Pending registers
@@ -212,7 +212,6 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		__set_CONTROL(0); //priviage mode 
   		__disable_irq(); //disable interrupt
   		__set_PRIMASK(1);
-  		HAL_GPIO_DeInit(GPIOE, GPIO_PIN_3); /deinit io
   		~~~
 
   3. 跳转操作
@@ -238,7 +237,7 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
   		JumpToApplication(); //jump
   		~~~
 
-  	这里刚接触bootloader的可能看不懂。这里的APPLICATION_ADDRESS就是0x90000000，也就是app的起始地址。在后面的链接文件中，我们把app的中断向量表放在最前面，也就是起始地址0x90000000。熟悉cortex中断向量表的可能知道，表中第一个地址存放的是sp指针，就是堆栈指针；第二个（也就是0x90000004）才是Reset_Handler，是单片机上电后开始运行的第一个函数，它调用SystenInit函数配置时钟，调用C库的\__main(armcc compiler)或__mainCRTStartup(gcc compiler)来初始化sp指针和bss段或者直接在函数内设置sp指针的值，初始化bss段。
+  	这里刚接触bootloader的可能看不懂。这里的APPLICATION_ADDRESS就是0x90000000，也就是app的起始地址。在后面的链接文件中，我们把app的中断向量表放在最前面，也就是起始地址0x90000000。熟悉cortex中断向量表的可能知道，表中第一个地址存放的是sp指针，就是堆栈指针；第二个（也就是0x90000004）才是Reset_Handler，是单片机上电后开始运行的第一个函数，它调用SystenInit函数配置时钟，调用C库的\__main(armcc compiler)或__mainCRTStartup(gcc compiler)来初始化sp指针和bss段或者直接在Reset_Handler函数内设置sp指针的值，初始化bss段。
 
   	总之，执行完最后一句后，程序就跳转到App执行。
 
@@ -339,14 +338,19 @@ bootloader和application是两个独立的工程，不同点在于app位于外�
 * 编辑makefile
 
 	在makefile最后添加如下语句：
+    $(your_openocd_path)就是你自己安装openocd的路径。
 
 	~~~makefile
 	connect:
-		openocd -f I:/MCU/Openocd/INSTALL/scripts/interface/cmsis-dap.cfg -f I:/MCU/Openocd/INSTALL/scripts/target/stm32h7x_extern.cfg
+		openocd \
+		-s $(your_openocd_path)/scripts \
+		-f $(your_openocd_path)/scripts/interface/cmsis-dap.cfg \
+		-f $(your_openocd_path)/scripts/target/stm32h7x_extern.cfg
 	download:
 		openocd \
-		-f I:/MCU/Openocd/INSTALL/scripts/interface/cmsis-dap.cfg \
-		-f I:/MCU/Openocd/INSTALL/scripts/target/stm32h7x_extern.cfg \
+		-s $(your_openocd_path)/scripts \
+		-f $(your_openocd_path)/scripts/interface/cmsis-dap.cfg \
+		-f $(your_openocd_path)/scripts/target/stm32h7x_extern.cfg \
 		-c init \
 		-c halt \
 		-c "flash write_image erase $(BUILD_DIR)/$(TARGET).hex 0x00000000" \
